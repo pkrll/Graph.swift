@@ -18,6 +18,6 @@ let package = Package(
 			),
 			.testTarget(
 				name: "GraphTests",
-				dependencies: ["Graph"]),
+				dependencies: ["Graph", "GraphCore"]),
 			]
 		)
