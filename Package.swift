@@ -6,12 +6,16 @@ import PackageDescription
 let package = Package(
 	name: "Graph",
 	products: [],
-		dependencies: [
-		],
-		targets: [
+	dependencies: [
+	],
+	targets: [
+		.target(
+			name: "Graph",
+			dependencies: ["GraphCore"]),
 			.target(
-				name: "Graph",
-			dependencies: []),
+				name: "GraphCore",
+				dependencies: []
+			),
 			.testTarget(
 				name: "GraphTests",
 				dependencies: ["Graph"]),

@@ -1,11 +1,11 @@
 //
 //  Node.swift
-//  Graph
+//  GraphCore
 //
 //  Created by Ardalan Samimi and Kevin Alemi on 2019-01-10.
 //
 
-class Node: Equatable, CustomStringConvertible {
+public class Node: Equatable, CustomStringConvertible {
 
 	public let label: Int
 	private(set) var neighbours: [Node]
@@ -14,11 +14,11 @@ class Node: Equatable, CustomStringConvertible {
 		return "\(self.label)"
 	}
 
-	convenience init(withLabel label: Int) {
+	public convenience init(withLabel label: Int) {
 		self.init(withLabel: label, neighbours: [])
 	}
 
-	init(withLabel label: Int, neighbours: [Node]) {
+	public init(withLabel label: Int, neighbours: [Node]) {
 		self.label = label
 		self.neighbours = neighbours
 	}
@@ -31,7 +31,7 @@ class Node: Equatable, CustomStringConvertible {
 		self.neighbours = self.neighbours.filter { $0 != node }
 	}
 
-	static func ==(lhs: Node, rhs: Node) -> Bool {
+	public static func ==(lhs: Node, rhs: Node) -> Bool {
 		return lhs.label == rhs.label && lhs.neighbours == rhs.neighbours
 	}
 

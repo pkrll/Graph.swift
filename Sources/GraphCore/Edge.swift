@@ -1,11 +1,11 @@
 //
 //  Edge.swift
-//  Dijkstra
+//  GraphCore
 //
 //  Created by Ardalan Samimi and Kevin Alemi on 2019-01-10.
 //
 
-class Edge {
+public class Edge {
 
 	public let toNode: Node
 	public let fromNode: Node
