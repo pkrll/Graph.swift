@@ -14,31 +14,32 @@
 The ``Graph`` object represents the graph, consisting of vertices and edges.
 
 ```swift
-public class Graph
-/**
- *  List of nodes.
- */
-public var nodes: [Node]
-/**
- *  Creates and adds a node to the graph.
- *
- *  - Parameter withLabel: The label of the node
- */
-public func addNode(withLabel: Int)
-/**
- *  Adds a node to the graph.
- *
- *  - Parameter node: The node to add
- */
-public func addNode(_ node: Node)
-/**
- *  Adds an edge between two nodes to the graph.
- *
- *  - Parameter from:       Label of the outgoing node
- *  - Parameter to:         Label of the incoming node
- *  - Parameter withWeight: The weight of the edge
- */
-public func addEdge(from: Int, to: Int, withWeight: Int)
+public class Graph {
+	/**
+	 *  List of nodes.
+	 */
+	public var nodes: [Node]
+	/**
+	 *  Creates and adds a node to the graph.
+	 *
+	 *  - Parameter withLabel: The label of the node
+	 */
+	public func addNode(withLabel: Int)
+	/**
+	 *  Adds a node to the graph.
+	 *
+	 *  - Parameter node: The node to add
+	 */
+	public func addNode(_ node: Node)
+	/**
+	 *  Adds an edge between two nodes to the graph.
+	 *
+	 *  - Parameter from:       Label of the outgoing node
+	 *  - Parameter to:         Label of the incoming node
+	 *  - Parameter withWeight: The weight of the edge
+	 */
+	public func addEdge(from: Int, to: Int, withWeight: Int)
+}
 ```
 
 #### Node
@@ -46,21 +47,22 @@ public func addEdge(from: Int, to: Int, withWeight: Int)
 The ``Node`` object represents the node of a graph.
 
 ```swift
-public class Node
-/**
- *  The label of the node.
- */
-public let label: Int
-/**
- *  The edges of the node.
- */
-public var edges: [Edge]
-/**
- *  Initializer.
- *
- *  - Parameter withLabel: The label of the node.
- */
-public init(withLabel: Int)
+public class Node {
+	/**
+	 *  The label of the node.
+	 */
+	public let label: Int
+	/**
+	 *  The edges of the node.
+	 */
+	public var edges: [Edge]
+	/**
+	 *  Initializer.
+	 *
+	 *  - Parameter withLabel: The label of the node.
+	 */
+	public init(withLabel: Int)
+}
 ```
 
 #### Edge
@@ -68,27 +70,28 @@ public init(withLabel: Int)
 The ``Edge`` object represents the edge between two nodes.
 
 ```swift
-public class Edge
-/**
- *  The outgoing node.
- */
-public let outgoing: Node
-/**
- *  The incoming node.
- */
-public let incoming: Node
-/**
- *  The weight of the edge.
- */
-public let weight: Int
-/**
- *  Initializer.
- *
- *  - Parameter from:       The outgoing node.
- *  - Parameter to:         The incoming node.
- *  - Parameter withWeight: The weight of the edge.
- */
-public init(from: Node, to: Node, withWeight: Int)
+public class Edge {
+	/**
+	 *  The outgoing node.
+	 */
+	public let outgoing: Node
+	/**
+	 *  The incoming node.
+	 */
+	public let incoming: Node
+	/**
+	 *  The weight of the edge.
+	 */
+	public let weight: Int
+	/**
+	 *  Initializer.
+	 *
+	 *  - Parameter from:       The outgoing node.
+	 *  - Parameter to:         The incoming node.
+	 *  - Parameter withWeight: The weight of the edge.
+	 */
+	public init(from: Node, to: Node, withWeight: Int)
+}
 ```
 
 ### Usage
