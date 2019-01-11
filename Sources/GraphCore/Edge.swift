@@ -7,12 +7,12 @@
 
 public class Edge {
 
-	public let toNode: Node
-	public let fromNode: Node
+	public let incoming: Node
+	public let outgoing: Node
 
-	init(from: Node, to toNode: Node) {
-		self.toNode = toNode
-		self.fromNode = from
+	init(from incoming: Node, to outgoing: Node) {
+		self.incoming = incoming
+		self.outgoing = outgoing
 	}
 
 }
