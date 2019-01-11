@@ -3,6 +3,7 @@
 * [Classes](#classes)
 	* [Graph](#graph)
 	* [Node](#node)
+	* [Edge](#edge)
 * [Usage](#usage)
 	* [Creating graphs](#creating-graphs)
 
@@ -55,11 +56,39 @@ public let label: Int
  */
 public var edges: [Edge]
 /**
- *	Initializer.
+ *  Initializer.
  *
- * 	- Parameter withLabel: The label of the node.
+ *  - Parameter withLabel: The label of the node.
  */
 public init(withLabel: Int)
+```
+
+#### Edge
+
+The ``Edge`` object represents the edge between two nodes.
+
+```swift
+public class Edge
+/**
+ *  The outgoing node.
+ */
+public let outgoing: Node
+/**
+ *  The incoming node.
+ */
+public let incoming: Node
+/**
+ *  The weight of the edge.
+ */
+public let weight: Int
+/**
+ *  Initializer.
+ *
+ *  - Parameter from:       The outgoing node.
+ *  - Parameter to:         The incoming node.
+ *  - Parameter withWeight: The weight of the edge.
+ */
+public init(from: Node, to: Node, withWeight: Int)
 ```
 
 ### Usage
