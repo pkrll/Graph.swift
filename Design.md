@@ -18,7 +18,7 @@ public class Graph {
 	/**
 	 *  List of nodes.
 	 */
-	public var nodes: [Node]
+	public private(set) var nodes: [Node]
 	/**
 	 *  Creates and adds a node to the graph.
 	 *
@@ -51,11 +51,11 @@ public class Node {
 	/**
 	 *  The label of the node.
 	 */
-	public let label: Int
+	public private(set) var label: Int
 	/**
 	 *  The edges of the node.
 	 */
-	public var edges: [Edge]
+	public private(set) var edges: [Edge]
 	/**
 	 *  Initializer.
 	 *
