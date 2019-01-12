@@ -17,6 +17,7 @@ The ``Graph`` object represents the graph, consisting of vertices and edges.
 public class Graph {
 	/**
 	 *  List of nodes.
+	 *  @type Array<Edge>
 	 */
 	public private(set) var nodes: [Node]
 	/**
@@ -39,6 +40,11 @@ public class Graph {
 	 *  - Parameter withWeight: The weight of the edge
 	 */
 	public func addEdge(from: Int, to: Int, withWeight: Int)
+	/**
+	 *  Getter for node with specified label.
+	 *  @type Node
+	 */
+	public subscript(_ nodeLabel: Int) -> Node
 }
 ```
 
@@ -47,21 +53,33 @@ public class Graph {
 The ``Node`` object represents the node of a graph.
 
 ```swift
-public class Node {
+public class Node<T> {
 	/**
 	 *  The label of the node.
+	 *  @type Int
 	 */
 	public private(set) var label: Int
 	/**
 	 *  The edges of the node.
+	 *  @type Array<Edge>
 	 */
 	public private(set) var edges: [Edge]
+	/**
+	 *  A list of properties.
+	 *  @type Array<T>
+	 */
+	public var properties: [T]
 	/**
 	 *  Initializer.
 	 *
 	 *  - Parameter withLabel: The label of the node.
 	 */
 	public init(withLabel: Int)
+	/**
+	 *  Setter/getter for user-defined properties.
+	 *  @type Any
+	 */
+	public subscript(_ propertyName: String) -> Any
 }
 ```
 
@@ -73,14 +91,17 @@ The ``Edge`` object represents the edge between two nodes.
 public class Edge {
 	/**
 	 *  The outgoing node.
+	 *  @type Node
 	 */
 	public let outgoing: Node
 	/**
 	 *  The incoming node.
+	 *  @type Node
 	 */
 	public let incoming: Node
 	/**
 	 *  The weight of the edge.
+	 *  @type Int
 	 */
 	public let weight: Int
 	/**
