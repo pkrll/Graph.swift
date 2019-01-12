@@ -137,12 +137,17 @@ graph.addEdge(from: 2, to: 3, withWeight: 1)
 
 for node in graph.nodes {
 
+	node['visited'] = true
+
 	for edge in node.edges {
 		print("Edge between \(edge.to) and \(edge.from) has weight \(edge.weight)")
 	}
 
 }
 
-
+let start = graph[0]
+if start['visited'] == true {
+	print("Start node == visited")
+}
 
 ```
