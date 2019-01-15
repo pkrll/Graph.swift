@@ -17,13 +17,18 @@ public class Graph<T> {
      *
      *  - Parameter withLabel: The label of the node
      */
-    public func addNode(withLabel: Int) {}
+    public func addNode(withLabel label: Int) {
+        let node = Node<T>(withLabel: label, edges: [])
+        nodes.append(node)
+    }
     /**
      *  Adds a node to the graph.
      *
      *  - Parameter node: The node to add
      */
-    public func addNode(_ node: Node<T>) {}
+    public func addNode(_ node: Node<T>) {
+        nodes.append(node)
+    }
     /**
      *  Adds an edge between two nodes to the graph.
      *
@@ -49,5 +54,9 @@ public class Graph<T> {
      */
     var numberOfNodes: Int {
         return self.nodes.count
+    }
+    
+    var allNodes: [Node<T>] {
+        return nodes
     }
 }
