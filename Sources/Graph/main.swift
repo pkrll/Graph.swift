@@ -1,4 +1,4 @@
 import GraphCore
 
-let node = Node(withLabel: 0, edges: [])
+let node = Node<String>(withLabel: 0, edges: [])
 print(node)
