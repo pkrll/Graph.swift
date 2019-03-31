@@ -1,6 +1,5 @@
 import XCTest
 @testable import Graph
-@testable import GraphCore
 
 final class GraphTests: XCTestCase {
 

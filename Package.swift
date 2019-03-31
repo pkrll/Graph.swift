@@ -11,13 +11,11 @@ let package = Package(
 	targets: [
 		.target(
 			name: "Graph",
-			dependencies: ["GraphCore"]),
-			.target(
-				name: "GraphCore",
-				dependencies: []
-			),
-			.testTarget(
-				name: "GraphTests",
-				dependencies: ["Graph", "GraphCore"]),
-			]
-		)
+			dependencies: []
+		),
+		.testTarget(
+			name: "GraphTests",
+			dependencies: ["Graph"]
+		),
+	]
+)
