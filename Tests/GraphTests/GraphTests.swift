@@ -6,8 +6,21 @@ final class GraphTests: XCTestCase {
 
 	func testNodeCreation() {
 		let label = 0
-		let node = Node(withLabel: label, edges: [])
+		let node = Node(withLabel: label)
 		XCTAssertEqual(node.label, label)
+	}
+
+	func testNodeAddEdge() {
+		let source = Node(withLabel: 0)
+		let target = Node(withLabel: 1)
+
+		XCTAssertEqual(source.numberOfEdges, 0)
+		XCTAssertEqual(target.numberOfEdges, 0)
+
+		let edge = Edge(from: source, to: target)
+		source.addEdge(edge)
+		XCTAssertEqual(source.numberOfEdges, 1)
+		XCTAssertEqual(target.numberOfEdges, 0)
 	}
 
 	func testGraphCreation() {
