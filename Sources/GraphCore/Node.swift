@@ -18,6 +18,16 @@ public class Node: CustomStringConvertible {
 		return "\(self.label)"
 	}
 
+	public var neighbours: [Node] {
+		var nodes: [Node] = []
+
+		for edge in self.edges {
+			nodes.insert(edge.outgoing, at: 0)
+		}
+
+		return nodes
+	}
+
 	public convenience init(withLabel label: Int) {
 		self.init(withLabel: label, edges: [])
 	}
@@ -27,7 +37,8 @@ public class Node: CustomStringConvertible {
 		self.edges = edges
 	}
 
-	public func addEdge(_ edge: Edge) {
+	public func addEdge(to target: Node) {
+		let edge = Edge(from: self, to: target)
 		self.edges.insert(edge, at: 0)
 	}
 
