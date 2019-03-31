@@ -10,6 +10,10 @@ public class Node: CustomStringConvertible {
 	public private(set) var label: Int
 	public private(set) var edges: [Edge]
 
+	public var numberOfEdges: Int {
+		return self.edges.count
+	}
+
 	public var description: String {
 		return "\(self.label)"
 	}
@@ -23,7 +27,7 @@ public class Node: CustomStringConvertible {
 		self.edges = edges
 	}
 
-	public addEdge(_ edge: Edge) {
+	public func addEdge(_ edge: Edge) {
 		self.edges.insert(edge, at: 0)
 	}
 
