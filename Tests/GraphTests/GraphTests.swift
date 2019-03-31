@@ -17,8 +17,7 @@ final class GraphTests: XCTestCase {
 		XCTAssertEqual(source.numberOfEdges, 0)
 		XCTAssertEqual(target.numberOfEdges, 0)
 
-		let edge = Edge(from: source, to: target)
-		source.addEdge(edge)
+		source.addEdge(to: target)
 		XCTAssertEqual(source.numberOfEdges, 1)
 		XCTAssertEqual(target.numberOfEdges, 0)
 	}
