@@ -22,6 +22,20 @@ final class GraphTests: XCTestCase {
 		XCTAssertEqual(target.numberOfEdges, 0)
 	}
 
+	func testNodeProperties() {
+		let node = Node(withLabel: 0)
+		node["color"] = "Blue"
+
+		XCTAssertNotNil(node["color"])
+		XCTAssertEqual(node["color"] as! String, "Blue")
+
+		node["color"] = "Red"
+		XCTAssertEqual(node["color"] as! String, "Red")
+
+		node.setProperty("color", to: "Yellow")
+		XCTAssertEqual(node["color"] as! String, "Yellow")
+	}
+
 	func testGraphCreation() {
 		let graph = Graph()
 		XCTAssertEqual(graph.size, 0)
@@ -53,6 +67,8 @@ final class GraphTests: XCTestCase {
 
 	static var allTests = [
 		("testNodeCreation", testNodeCreation),
+		("testNodeAddEdge", testNodeAddEdge),
+		("testNodeProperties", testNodeProperties),
 		("testGraphCreation", testGraphCreation),
 		("testGraphAddNode", testGraphAddNode),
 		("testGraphSubscript", testGraphSubscript)
