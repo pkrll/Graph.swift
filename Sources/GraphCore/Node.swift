@@ -23,4 +23,8 @@ public class Node: CustomStringConvertible {
 		self.edges = edges
 	}
 
+	public addEdge(_ edge: Edge) {
+		self.edges.insert(edge, at: 0)
+	}
+
 }
