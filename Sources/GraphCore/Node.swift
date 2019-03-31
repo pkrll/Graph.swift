@@ -39,7 +39,11 @@ public class Node: CustomStringConvertible {
 	}
 
 	public func addEdge(to target: Node) {
-		let edge = Edge(from: self, to: target)
+		self.addEdge(to: target, withWeight: 0)
+	}
+
+	public func addEdge(to target: Node, withWeight weight: Int) {
+		let edge = Edge(from: self, to: target, withWeight: weight)
 		self.edges.append(edge)
 	}
 

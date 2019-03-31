@@ -65,12 +65,48 @@ final class GraphTests: XCTestCase {
 		XCTAssertEqual(node!.label, 3)
 	}
 
+	func testGraph() {
+		let graph = Graph()
+
+		graph.addNode(withLabel: 0)
+		graph.addNode(withLabel: 1)
+		graph.addNode(withLabel: 2)
+
+		let target = Node(withLabel: 3)
+		graph.addNode(target)
+
+		XCTAssertEqual(graph.size, 4)
+
+		let weights = [0: [2, 5], 1: [5], 2: [1]]
+
+		XCTAssertTrue(graph.addEdge(from: 0, to: 1, withWeight: weights[0]![0]))
+		XCTAssertTrue(graph.addEdge(from: 0, to: 2, withWeight: weights[0]![1]))
+		XCTAssertTrue(graph.addEdge(from: 1, to: 3, withWeight: weights[1]![0]))
+		XCTAssertTrue(graph.addEdge(from: 2, to: 3, withWeight: weights[2]![0]))
+		XCTAssertFalse(graph.addEdge(from: 5, to: 3, withWeight: 0))
+
+		for node in graph.nodes {
+			XCTAssertNil(node["visited"])
+			var index = 0
+
+			for edge in node.edges {
+				XCTAssertEqual(edge.weight, weights[node.label]![index])
+				index += 1
+			}
+
+			node["visited"] = true
+			XCTAssertNotNil(node["visited"])
+			XCTAssertTrue(node["visited"] as! Bool)
+		}
+	}
+
 	static var allTests = [
 		("testNodeCreation", testNodeCreation),
 		("testNodeAddEdge", testNodeAddEdge),
 		("testNodeProperties", testNodeProperties),
 		("testGraphCreation", testGraphCreation),
 		("testGraphAddNode", testGraphAddNode),
-		("testGraphSubscript", testGraphSubscript)
+		("testGraphSubscript", testGraphSubscript),
+		("testGraph", testGraph)
 	]
 }

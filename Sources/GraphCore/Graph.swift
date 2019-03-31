@@ -32,7 +32,10 @@ public class Graph {
 		self.nodes.insert(node, at: size)
 	}
 
-	public func addEdge(from label: Int, to toLabel: Int, withWeight weight: Int) {
+	public func addEdge(from label: Int, to targetLabel: Int, withWeight weight: Int) -> Bool {
+		guard let source = self[label], let target = self[targetLabel] else { return false }
+		source.addEdge(to: target, withWeight: weight)
 
+		return true
 	}
 }
